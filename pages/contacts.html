@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lamg="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Крутая работа</title>
+        <link rel="stylesheet" href="../style/styles.css" />
+        <script src="../js/theme.js"></script>
+    </head>
+    <body>
+        <div class="page">
+            <header class="header">
+                <h1 class="header__title">Контакты</h1>
+            </header>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="../index.html">Главная</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="../pages/news.html"
+                            >Новости</a
+                        >
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="../pages/goods.html"
+                            >Товары</a
+                        >
+                    </li>
+                    <li></li>
+                    <li class="nav__item nav__item--active">
+                        <a class="nav__link" href="../pages/contacts.html"
+                            >Контакты</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+            <main class="main">
+                <section class="contacts">
+                    <article class="contacts__item">
+                        <p>Адрес электронной почты: aaaaa@bbb.ccc</p>
+                    </article>
+                    <article class="contacts__item contacts__item--even">
+                        <p>Физический адрес: г Бердск, обл. Новосибирская</p>
+                    </article>
+                    <article class="contacts__item">
+                        <p>Номер телефона: +7 9139598765</p>
+                    </article>
+                </section>
+                <button
+                    onclick="contactModal.showModal()"
+                    class="btn btn--contact"
+                >
+                    Связаться с нами
+                </button>
+            </main>
+            <footer class="footer">
+                <p class="footer__text">&copy; 2025 Крутая работа</p>
+            </footer>
+
+            <dialog id="contactModal">
+                <div class="modal__header">
+                    <button
+                        class="btn btn--close--form"
+                        onclick="contactModal.close()"
+                    >
+                        <b>X</b>
+                    </button>
+                    <h2>Форма обратной связи</h2>
+                </div>
+                <div class="modal__content">
+                    <form id="feedbackForm" method="dialog">
+                        <div class="form__group">
+                            <label for="name"
+                                >Имя<span class="required">*</span></label
+                            >
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                placeholder="Введите ваше имя"
+                            />
+                        </div>
+                        <div class="form__group">
+                            <label for="phone"
+                                >Телефон<span class="required">*</span></label
+                            >
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                pattern="^\+7\d{10}$"
+                                placeholder="+7__________"
+                            />
+                        </div>
+                        <div class="form__group">
+                            <label for="email"
+                                >Email<span class="required">*</span></label
+                            >
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                placeholder="example@mail.ru"
+                            />
+                        </div>
+                        <div class="form__group">
+                            <label for="category"
+                                >Категория обращения<span class="required"
+                                    >*</span
+                                ></label
+                            >
+                            <select id="category" name="category" required>
+                                <option value="">Выберите категорию</option>
+                                <option value="technical">
+                                    Техническая поддержка
+                                </option>
+                                <option value="commercial">
+                                    Коммерческое предложение
+                                </option>
+                                <option value="cooperation">
+                                    Сотрудничество
+                                </option>
+                                <option value="complaint">Жалоба</option>
+                                <option value="suggestion">Предложение</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label for="message"
+                                >Текст обращения<span class="required"
+                                    >*</span
+                                ></label
+                            >
+                            <textarea
+                                id="message"
+                                name="message"
+                                required
+                                placeholder="Опишите вашу проблему или вопрос..."
+                            ></textarea>
+                        </div>
+                        <div class="modal__actions">
+                            <button type="reset" class="btn btn--cancel">
+                                Отмена
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn--submit"
+                                onclick="submitForm()"
+                            >
+                                Отправить
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+        </div>
+    </body>
+    <script src="../js/form-button.js"></script>
+</html>

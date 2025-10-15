@@ -1,0 +1,280 @@
+:root {
+    --main: #adcff1;
+    --accent: #b4c014;
+    --light: #ecf0f1;
+    --dark: #12171b;
+    --text: #e02a0a;
+    --white: #fff;
+    --orange: #a614a6;
+    --blue: #596dc7;
+    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --sm: 10px;
+    --md: 20px;
+    --lg: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--light);
+}
+
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--white);
+    min-height: 100vh;
+}
+
+.header {
+    background: var(--main);
+    color: var(--white);
+    padding: var(--lg);
+    text-align: center;
+}
+
+.header__title {
+    font-size: 2rem;
+}
+
+.nav {
+    background: var(--dark);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav__link {
+    display: block;
+    padding: var(--md);
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav__link:hover,
+.nav__item--active .nav__link {
+    background: var(--accent);
+}
+
+.main {
+    padding: var(--lg);
+}
+
+.card {
+    background: var(--white);
+    padding: var(--lg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--lg);
+}
+
+.profile__card {
+    display: flex;
+    align-items: center;
+    gap: var(--lg);
+}
+
+.profile__photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+}
+
+.profile__name {
+    font-size: 1.5rem;
+    color: var(--main);
+    margin-bottom: var(--sm);
+}
+
+.profile__group {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.skills__list {
+    display: flex;
+    gap: var(--md);
+    flex-wrap: wrap;
+}
+
+.skill {
+    padding: var(--md);
+    border-radius: var(--radius);
+    color: var(--white);
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-3px);
+}
+
+.skill--html { background: #e34c26; }
+.skill--css { background: #264de4; }
+.skill--js { background: #c0b14c; color: var(--text); }
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--md);
+}
+
+.project-card {
+    border-left: 4px solid var(--accent);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.news__item {
+    background: var(--light);
+    border-left: 5px solid var(--accent);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.news__item--date,
+.news__item--author {
+    text-align: left;
+    font-size: 12px;
+    color: #302d2e;
+}
+
+.contacts__item {
+    background: var(--orange);
+    text-align: center;
+}
+
+.contacts__item--even {
+    background: var(--blue);
+}
+
+.goods {
+    display: grid;
+    gap: 50px;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+}
+
+.goods__item {
+    border: 3px solid #000;
+    background: linear-gradient(100deg, var(--accent), var(--orange));
+    text-align: center;
+    color: #000;
+}
+
+.goods__item:hover {
+    background: linear-gradient(100deg, var(--accent) 20%, var(--orange) 80%);
+}
+
+.goods__item > img {
+    border-radius: 15px;
+}
+
+.footer {
+    background: var(--main);
+    color: var(--white);
+    text-align: center;
+    padding: var(--md);
+    margin-top: var(--lg);
+}
+
+.btn {
+    font-size: 20px;
+    border-radius: var(--radius);
+    border: 1px solid;
+    padding: 5px;
+}
+
+.btn--contact {
+    background: linear-gradient(135deg, #af82af, #d1f52d);
+}
+
+.btn--contact:hover {
+    background: linear-gradient(135deg, #27bf12, #ff92d2);
+}
+
+@media (max-width: 768px) {
+    .profile__card,
+    .nav__list {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .projects__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .goods {
+        display: block;
+    }
+    
+    .goods__item {
+        margin: 20px;
+    }
+}
+
+.badge {
+    background: var(--light);
+    color: var(--main);
+    padding: 5px 10px;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+}
+
+.skills-grid {
+    display: grid;
+    gap: var(--md);
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: var(--sm);
+    justify-content: space-between;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--light);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: var(--sm);
+}
+
+.footer div {
+    margin-top: var(--sm);
+}
+
+.footer a {
+    color: var(--white);
+    margin: 0 var(--sm);
+}

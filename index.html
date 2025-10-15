@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя работа</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <h1 class="header__title">Моё Портфолио</h1>
+            <p>Студент</p>
+            <span class="badge">ЭФБО-02-24</span>
+        </header>
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main">
+            <section class="profile">
+                <div class="profile__card card">
+                    <img src="images/iam.jpg" alt="Фото студента" class="profile__photo">
+                    <div>
+                        <h2 class="profile__name">Грачев Николай Романович</h2>
+                        <p class="profile__group">Студент группы ЭФБО-02-24</p>
+                        <p>Факультет информационных технологий, специальность "Фуллстек"</p>
+                        <div class="skills__list">
+                            <span class="skill skill--html">HTML/CSS</span>
+                            <span class="skill skill--js">JavaScript</span>
+                            <span class="skill skill--css">Bootstrap</span>
+                            <span class="skill" style="background: #61dafb; color: #000;">React</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about card">
+                <h3 class="about__title">Обо мне</h3>
+                <h1 class="about__text">
+                    В свободное время изучаю историю и изучаю новые технологии.
+                </h1>
+                <p class="about__text">
+                    Мои основные интересы: фронтенд разработка, UX/UI дизайн и мобильная разработка.
+                    Стремлюсь к созданию качественных и удобных пользовательских интерфейсов.
+                </p>
+            </section>
+
+            <section class="skills card">
+                <h3 class="skills__title">Мои навыки</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span>HTML/CSS</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span>100%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>JavaScript</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span>110%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Bootstrap</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>React</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span>100%</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="projects card">
+                <h3 class="projects__title">Мои проекты</h3>
+                <div class="projects__grid">
+                    <div class="project-card">
+                        <img src="images/cloud.png" alt="Личный сайт">
+                        <h4 class="project-card__title">Личный сайт</h4>
+                        <p class="project-card__desc">
+                            Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
+                        </p>
+                        <div class="skills__list">
+                            <span class="skill skill--html">HTML</span>
+                            <span class="skill skill--css">CSS</span>
+                            <span class="skill" style="background: #7952b3;">Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/clouds.png" alt="Todo приложение">
+                        <h4 class="project-card__title">Todo приложение</h4>
+                        <p class="project-card__desc">
+                            Приложение для управления задачами с использованием JavaScript.
+                        </p>
+                        <div class="skills__list">
+                            <span class="skill skill--js">JavaScript</span>
+                            <span class="skill" style="background: #666;">LocalStorage</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Портфолио студента. Все права защищены.</p>
+            <div>
+                <a href="pages/contacts.html">Контакты</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </footer>
+    </div>
+    <script src="/js/theme.js"></script>
+    <script>
+        function submitForm() {
+            const form = document.getElementById("feedbackForm");
+            const formData = new FormData(form);
+            
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const data = Object.fromEntries(formData);
+            contactModal.close();
+            form.reset();
+            alert("Данные приняты, мы свяжемся с вами!");
+        }
+
+        document.getElementById('feedbackForm')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && e.target.type !== 'textarea') {
+                e.preventDefault();
+            }
+        });
+    </script
+</body>
+</html>
